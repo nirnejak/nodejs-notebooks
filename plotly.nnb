@@ -1,0 +1,80 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "const { Plotly } = require('node-kernel');\n\nconst numbers = [1,2,3,4,5,6,7,8,9]\nconst squares = numbers.map((x: number) => x * x)\nconst cubes = numbers.map((x: number) => x * x * x)\n\nconst data = [\n  { x: numbers, y: squares, type: 'lines'},\n  { x: numbers, y: cubes, type: 'lines'},\n];\n\nconst layout = {\n  height: 400,\n  width: 500\n}\n\nPlotly.newPlot('myDiv', data, layout)"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "xd90b8c6826254a1ca0ca8743e32b4c20",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9
+                                        ],
+                                        "y": [
+                                            1,
+                                            4,
+                                            9,
+                                            16,
+                                            25,
+                                            36,
+                                            49,
+                                            64,
+                                            81
+                                        ],
+                                        "type": "lines"
+                                    },
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9
+                                        ],
+                                        "y": [
+                                            1,
+                                            8,
+                                            27,
+                                            64,
+                                            125,
+                                            216,
+                                            343,
+                                            512,
+                                            729
+                                        ],
+                                        "type": "lines"
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 400,
+                                    "width": 500
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
