@@ -1,0 +1,77 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "const { Plotly } = require(\"node-kernel\");\n\nconst theta = [\"Bangalore\", \"Pune\", \"Mumbai\", \"Chennai\", \"Calcutta\", \"Hyderabad\"];\nconst r1 = [741, 516.2, 603.4, 426, 206.1];\nconst r2 = [206.1, 426, 603.4, 516.2, 741];\n\nconst trace1 = { r: r1, theta, type: \"scatterpolar\", fill: \"toself\" };\nconst trace2 = { r: r2, theta, type: \"scatterpolar\", fill: \"toself\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n  polar: {\n    radialaxis: {\n      visible: true,\n      range: [0, 700],\n    },\n  },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "x54a6f9ee20e54945ab8b8b6bfdb2ccc6",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "r": [
+                                            741,
+                                            516.2,
+                                            603.4,
+                                            426,
+                                            206.1
+                                        ],
+                                        "theta": [
+                                            "Bangalore",
+                                            "Pune",
+                                            "Mumbai",
+                                            "Chennai",
+                                            "Calcutta",
+                                            "Hyderabad"
+                                        ],
+                                        "type": "scatterpolar",
+                                        "fill": "toself"
+                                    },
+                                    {
+                                        "r": [
+                                            206.1,
+                                            426,
+                                            603.4,
+                                            516.2,
+                                            741
+                                        ],
+                                        "theta": [
+                                            "Bangalore",
+                                            "Pune",
+                                            "Mumbai",
+                                            "Chennai",
+                                            "Calcutta",
+                                            "Hyderabad"
+                                        ],
+                                        "type": "scatterpolar",
+                                        "fill": "toself"
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 400,
+                                    "width": 500,
+                                    "polar": {
+                                        "radialaxis": {
+                                            "visible": true,
+                                            "range": [
+                                                0,
+                                                700
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
