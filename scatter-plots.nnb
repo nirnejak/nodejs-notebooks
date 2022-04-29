@@ -1,0 +1,82 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, type: \"scatter\", mode: \"markers\" };\nconst trace2 = { x: numbers, y: cubes, type: \"scatter\", mode: \"markers\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "x03cb56236cbb40e3ac521ac0baee8a5c",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9
+                                        ],
+                                        "y": [
+                                            1,
+                                            4,
+                                            9,
+                                            16,
+                                            25,
+                                            36,
+                                            49,
+                                            64,
+                                            81
+                                        ],
+                                        "type": "scatter",
+                                        "mode": "markers"
+                                    },
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9
+                                        ],
+                                        "y": [
+                                            1,
+                                            8,
+                                            27,
+                                            64,
+                                            125,
+                                            216,
+                                            343,
+                                            512,
+                                            729
+                                        ],
+                                        "type": "scatter",
+                                        "mode": "markers"
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 400,
+                                    "width": 500
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

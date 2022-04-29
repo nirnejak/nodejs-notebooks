@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require('node-kernel');\n\nconst numbers = [1,2,3,4,5,6,7,8,9]\nconst squares = numbers.map((x: number) => x * x)\nconst cubes = numbers.map((x: number) => x * x * x)\n\nconst data = [\n  { x: numbers, y: squares, type: 'lines'},\n  { x: numbers, y: cubes, type: 'lines'},\n];\n\nconst layout = {\n  height: 400,\n  width: 500\n}\n\nPlotly.newPlot('myDiv', data, layout)"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, type: \"bar\" };\nconst trace2 = { x: numbers, y: cubes, type: \"bar\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "xd90b8c6826254a1ca0ca8743e32b4c20",
+                                "requestId": "x73cd44eb54d3403f8d38a2b172db5661",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -38,7 +38,7 @@
                                             64,
                                             81
                                         ],
-                                        "type": "lines"
+                                        "type": "bar"
                                     },
                                     {
                                         "x": [
@@ -63,7 +63,7 @@
                                             512,
                                             729
                                         ],
-                                        "type": "lines"
+                                        "type": "bar"
                                     }
                                 ],
                                 "layout": {

@@ -1,0 +1,108 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { \n  x: numbers,\n  y: squares,\n  type: \"scatter\",\n  mode: \"markers\",\n  marker: { size: squares }\n};\nconst trace2 = { \n  x: numbers,\n  y: cubes,\n  type: \"scatter\",\n  mode: \"markers\",\n  marker: { size: squares }\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "x5bc1dee291fd47a7a4995fb7831a1c38",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9
+                                        ],
+                                        "y": [
+                                            1,
+                                            4,
+                                            9,
+                                            16,
+                                            25,
+                                            36,
+                                            49,
+                                            64,
+                                            81
+                                        ],
+                                        "type": "scatter",
+                                        "mode": "markers",
+                                        "marker": {
+                                            "size": [
+                                                1,
+                                                4,
+                                                9,
+                                                16,
+                                                25,
+                                                36,
+                                                49,
+                                                64,
+                                                81
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "x": [
+                                            1,
+                                            2,
+                                            3,
+                                            4,
+                                            5,
+                                            6,
+                                            7,
+                                            8,
+                                            9
+                                        ],
+                                        "y": [
+                                            1,
+                                            8,
+                                            27,
+                                            64,
+                                            125,
+                                            216,
+                                            343,
+                                            512,
+                                            729
+                                        ],
+                                        "type": "scatter",
+                                        "mode": "markers",
+                                        "marker": {
+                                            "size": [
+                                                1,
+                                                4,
+                                                9,
+                                                16,
+                                                25,
+                                                36,
+                                                49,
+                                                64,
+                                                81
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 400,
+                                    "width": 500
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
