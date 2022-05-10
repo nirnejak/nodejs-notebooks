@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { \n  x: numbers,\n  y: squares,\n  type: \"scatter\",\n  mode: \"markers\",\n  marker: { size: squares }\n};\nconst trace2 = { \n  x: numbers,\n  y: cubes,\n  type: \"scatter\",\n  mode: \"markers\",\n  marker: { size: squares }\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { \n  x: numbers,\n  y: squares,\n  marker: { size: squares },\n  name: \"blue\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\nconst trace2 = { \n  x: numbers,\n  y: cubes,\n  marker: { size: squares },\n  name: \"orange\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "x5bc1dee291fd47a7a4995fb7831a1c38",
+                                "requestId": "x67f65c04403e4545b21e3ebeb74c701e",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -38,8 +38,6 @@
                                             64,
                                             81
                                         ],
-                                        "type": "scatter",
-                                        "mode": "markers",
                                         "marker": {
                                             "size": [
                                                 1,
@@ -52,7 +50,10 @@
                                                 64,
                                                 81
                                             ]
-                                        }
+                                        },
+                                        "name": "blue",
+                                        "type": "scatter",
+                                        "mode": "markers"
                                     },
                                     {
                                         "x": [
@@ -77,8 +78,6 @@
                                             512,
                                             729
                                         ],
-                                        "type": "scatter",
-                                        "mode": "markers",
                                         "marker": {
                                             "size": [
                                                 1,
@@ -91,7 +90,10 @@
                                                 64,
                                                 81
                                             ]
-                                        }
+                                        },
+                                        "name": "orange",
+                                        "type": "scatter",
+                                        "mode": "markers"
                                     }
                                 ],
                                 "layout": {

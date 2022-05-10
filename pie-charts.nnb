@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst labels = [\"Delhi\", \"Bengaluru\", \"Mumbai\", \"Chennai\", \"Kolkata\"];\nconst values = [1484, 741, 603.4, 426, 206.1];\n\nconst data = [{ labels, values, type: \"pie\" }];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst labels = [\"Delhi\", \"Bengaluru\", \"Mumbai\", \"Chennai\", \"Kolkata\"];\nconst values = [1484, 741, 603.4, 426, 206.1];\n\nconst data = [{ labels, values, type: \"pie\", showlegend: true }];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "x7493a3fee9894e1e8d8f5571e4756037",
+                                "requestId": "xc23b378e261a459697ef3ae4bd789cd3",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -30,7 +30,8 @@
                                             426,
                                             206.1
                                         ],
-                                        "type": "pie"
+                                        "type": "pie",
+                                        "showlegend": true
                                     }
                                 ],
                                 "layout": {
