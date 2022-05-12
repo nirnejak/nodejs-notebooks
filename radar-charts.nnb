@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst theta = [\n  \"Bangalore\",\n  \"Pune\",\n  \"Mumbai\",\n  \"Chennai\",\n  \"Calcutta\",\n  \"Hyderabad\",\n];\nconst r1 = [741, 516.2, 603.4, 426, 206.1];\nconst r2 = [206.1, 426, 603.4, 516.2, 741];\n\nconst trace1 = {\n  r: r1,\n  theta,\n  name: \"Area 1\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\nconst trace2 = {\n  r: r2,\n  theta,\n  name: \"Area 2\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n  polar: {\n    radialaxis: {\n      visible: true,\n      range: [0, 900],\n    },\n    bgcolor: \"transparent\",\n  },\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst theta = [\n  \"Bangalore\",\n  \"Pune\",\n  \"Mumbai\",\n  \"Chennai\",\n  \"Calcutta\",\n  \"Hyderabad\",\n];\nconst r1 = [741, 516.2, 603.4, 426, 206.1];\nconst r2 = [206.1, 426, 603.4, 516.2, 741];\n\nconst trace1 = {\n  r: r1,\n  theta,\n  name: \"Area 1\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\nconst trace2 = {\n  r: r2,\n  theta,\n  name: \"Area 2\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n  polar: {\n    radialaxis: {\n      visible: true,\n      range: [0, 900],\n    },\n    bgcolor: \"transparent\",\n  },\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "x52e5b147616c4033b41adbfdc799c3bf",
+                                "requestId": "xcee894c31801473089ca35a3c8c8cedc",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -57,8 +57,8 @@
                                     }
                                 ],
                                 "layout": {
-                                    "height": 400,
-                                    "width": 500,
+                                    "height": 500,
+                                    "width": 600,
                                     "polar": {
                                         "radialaxis": {
                                             "visible": true,
