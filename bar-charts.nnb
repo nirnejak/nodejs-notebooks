@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, name: \"blue\", type: \"bar\" };\nconst trace2 = { x: numbers, y: cubes, name: \"orange\", type: \"bar\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n  barmode: \"group\",\n  title: \"Graph Title\",\n  xaxis: { title: \"X-Axis Title\" },\n  yaxis: { title: \"Y-Axis Title\" },\n  bargap: 0.3,\n\n  paper_bgcolor: \"transparent\",\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, name: \"Square\", type: \"bar\" };\nconst trace2 = { x: numbers, y: cubes, name: \"Cube\", type: \"bar\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n  barmode: \"group\",\n  title: \"Graph Title\",\n  xaxis: { title: \"X-Axis Title\" },\n  yaxis: { title: \"Y-Axis Title\" },\n  bargap: 0.3,\n\n  paper_bgcolor: \"transparent\",\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "x7bdc924cddf249d4ac8e1357567b0569",
+                                "requestId": "x957cafbe31c44a8cb099341bc7612fbc",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -38,7 +38,7 @@
                                             64,
                                             81
                                         ],
-                                        "name": "blue",
+                                        "name": "Square",
                                         "type": "bar"
                                     },
                                     {
@@ -64,13 +64,13 @@
                                             512,
                                             729
                                         ],
-                                        "name": "orange",
+                                        "name": "Cube",
                                         "type": "bar"
                                     }
                                 ],
                                 "layout": {
-                                    "height": 400,
-                                    "width": 500,
+                                    "height": 500,
+                                    "width": 600,
                                     "barmode": "group",
                                     "title": "Graph Title",
                                     "xaxis": {

@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = {\n  x: numbers,\n  y: squares,\n  name: \"blue\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\nconst trace2 = {\n  x: numbers,\n  y: cubes,\n  name: \"orange\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = {\n  x: numbers,\n  y: squares,\n  name: \"square\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\nconst trace2 = {\n  x: numbers,\n  y: cubes,\n  name: \"cube\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {

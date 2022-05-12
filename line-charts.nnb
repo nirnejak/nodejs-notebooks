@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, name: \"blue\", type: \"line\" };\nconst trace2 = { x: numbers, y: cubes, name: \"orange\", type: \"line\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, name: \"Square\", type: \"line\" };\nconst trace2 = { x: numbers, y: cubes, name: \"Cube\", type: \"line\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "x335229bbf035421daef5261b8c4d55e0",
+                                "requestId": "x2b7019418e4d43f984326d177205ea63",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -38,7 +38,7 @@
                                             64,
                                             81
                                         ],
-                                        "name": "blue",
+                                        "name": "Square",
                                         "type": "line"
                                     },
                                     {
@@ -64,13 +64,13 @@
                                             512,
                                             729
                                         ],
-                                        "name": "orange",
+                                        "name": "Cube",
                                         "type": "line"
                                     }
                                 ],
                                 "layout": {
-                                    "height": 400,
-                                    "width": 500,
+                                    "height": 500,
+                                    "width": 600,
                                     "colorway": [
                                         "#e91e63",
                                         "#673ab7"
