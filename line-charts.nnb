@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, name: \"blue\", type: \"line\" };\nconst trace2 = { x: numbers, y: cubes, name: \"orange\", type: \"line\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = { x: numbers, y: squares, name: \"blue\", type: \"line\" };\nconst trace2 = { x: numbers, y: cubes, name: \"orange\", type: \"line\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 400,\n  width: 500,\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "x249098f78a4f4964b135caf4ad3386c6",
+                                "requestId": "x335229bbf035421daef5261b8c4d55e0",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -38,8 +38,8 @@
                                             64,
                                             81
                                         ],
-                                        "type": "line",
-                                        "name": "blue"
+                                        "name": "blue",
+                                        "type": "line"
                                     },
                                     {
                                         "x": [
@@ -64,13 +64,23 @@
                                             512,
                                             729
                                         ],
-                                        "type": "line",
-                                        "name": "orange"
+                                        "name": "orange",
+                                        "type": "line"
                                     }
                                 ],
                                 "layout": {
                                     "height": 400,
-                                    "width": 500
+                                    "width": 500,
+                                    "colorway": [
+                                        "#e91e63",
+                                        "#673ab7"
+                                    ],
+                                    "paper_bgcolor": "transparent",
+                                    "plot_bgcolor": "transparent",
+                                    "font": {
+                                        "family": "Colfax",
+                                        "color": "white"
+                                    }
                                 }
                             }
                         }
