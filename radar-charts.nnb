@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst theta = [\n  \"Bangalore\",\n  \"Pune\",\n  \"Mumbai\",\n  \"Chennai\",\n  \"Calcutta\",\n  \"Hyderabad\",\n];\nconst r1 = [741, 516.2, 603.4, 426, 206.1];\nconst r2 = [206.1, 426, 603.4, 516.2, 741];\n\nconst trace1 = {\n  r: r1,\n  theta,\n  name: \"Area 1\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\nconst trace2 = {\n  r: r2,\n  theta,\n  name: \"Area 2\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n  polar: {\n    radialaxis: {\n      visible: true,\n      range: [0, 900],\n    },\n    bgcolor: \"transparent\",\n  },\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst theta = [\n  \"Bangalore\",\n  \"Pune\",\n  \"Mumbai\",\n  \"Chennai\",\n  \"Calcutta\",\n  \"Hyderabad\",\n];\nconst r1 = [741, 516.2, 603.4, 426, 206.1, 325.1];\nconst r2 = [206.1, 426, 603.4, 516.2, 741, 551.5];\n\nconst trace1 = {\n  theta,\n  r: r1,\n  name: \"Area 1\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\nconst trace2 = {\n  theta,\n  r: r2,\n  name: \"Area 2\",\n  type: \"scatterpolar\",\n  fill: \"toself\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n  polar: {\n    radialaxis: {\n      visible: true,\n      range: [0, 900],\n    },\n    bgcolor: \"transparent\",\n  },\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,18 +11,11 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "xcee894c31801473089ca35a3c8c8cedc",
+                                "requestId": "x2e95db2834ea458e853da1c717e7f68d",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
                                     {
-                                        "r": [
-                                            741,
-                                            516.2,
-                                            603.4,
-                                            426,
-                                            206.1
-                                        ],
                                         "theta": [
                                             "Bangalore",
                                             "Pune",
@@ -30,19 +23,20 @@
                                             "Chennai",
                                             "Calcutta",
                                             "Hyderabad"
+                                        ],
+                                        "r": [
+                                            741,
+                                            516.2,
+                                            603.4,
+                                            426,
+                                            206.1,
+                                            325.1
                                         ],
                                         "name": "Area 1",
                                         "type": "scatterpolar",
                                         "fill": "toself"
                                     },
                                     {
-                                        "r": [
-                                            206.1,
-                                            426,
-                                            603.4,
-                                            516.2,
-                                            741
-                                        ],
                                         "theta": [
                                             "Bangalore",
                                             "Pune",
@@ -50,6 +44,14 @@
                                             "Chennai",
                                             "Calcutta",
                                             "Hyderabad"
+                                        ],
+                                        "r": [
+                                            206.1,
+                                            426,
+                                            603.4,
+                                            516.2,
+                                            741,
+                                            551.5
                                         ],
                                         "name": "Area 2",
                                         "type": "scatterpolar",
