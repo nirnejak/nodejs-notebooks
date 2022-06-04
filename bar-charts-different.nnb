@@ -1,0 +1,101 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "const { Plotly } = require(\"node-kernel\");\n\nconst x1 = [\n  \"ios-app\",\n  \"android-app\",\n  \"android-app\",\n  \"sms\",\n  \"sms\",\n  \"android-app\",\n  \"sms\",\n  \"sms\",\n  \"android-app\",\n];\nconst x2 = [\n  \"river\",\n  \"tank-water\",\n  \"canal\",\n  \"well-water\",\n  \"canal\",\n  \"well-water\",\n  \"tank-water\",\n  \"river\",\n  \"river\",\n];\n\nconst y = [6, 436, 378, 177, 165, 440, 207, 12, 31];\n\nconst trace1 = { x: x1, y: y, name: \"Square\", type: \"bar\" };\nconst trace2 = { x: x2, y: y, name: \"Cube\", type: \"bar\" };\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n  barmode: \"group\",\n  title: \"Graph Title\",\n  xaxis: { title: \"X-Axis Title\" },\n  yaxis: { title: \"Y-Axis Title\" },\n  bargap: 0.3,\n\n  paper_bgcolor: \"transparent\",\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.ts.notebook.plotly+json",
+                            "value": {
+                                "requestId": "x875edc436cf44460928776393dbeb45b",
+                                "type": "generatePlot",
+                                "ele": "myDiv",
+                                "data": [
+                                    {
+                                        "x": [
+                                            "ios-app",
+                                            "android-app",
+                                            "android-app",
+                                            "sms",
+                                            "sms",
+                                            "android-app",
+                                            "sms",
+                                            "sms",
+                                            "android-app"
+                                        ],
+                                        "y": [
+                                            6,
+                                            436,
+                                            378,
+                                            177,
+                                            165,
+                                            440,
+                                            207,
+                                            12,
+                                            31
+                                        ],
+                                        "name": "Square",
+                                        "type": "bar"
+                                    },
+                                    {
+                                        "x": [
+                                            "river",
+                                            "tank-water",
+                                            "canal",
+                                            "well-water",
+                                            "canal",
+                                            "well-water",
+                                            "tank-water",
+                                            "river",
+                                            "river"
+                                        ],
+                                        "y": [
+                                            6,
+                                            436,
+                                            378,
+                                            177,
+                                            165,
+                                            440,
+                                            207,
+                                            12,
+                                            31
+                                        ],
+                                        "name": "Cube",
+                                        "type": "bar"
+                                    }
+                                ],
+                                "layout": {
+                                    "height": 500,
+                                    "width": 600,
+                                    "barmode": "group",
+                                    "title": "Graph Title",
+                                    "xaxis": {
+                                        "title": "X-Axis Title"
+                                    },
+                                    "yaxis": {
+                                        "title": "Y-Axis Title"
+                                    },
+                                    "bargap": 0.3,
+                                    "paper_bgcolor": "transparent",
+                                    "colorway": [
+                                        "#e91e63",
+                                        "#673ab7"
+                                    ],
+                                    "plot_bgcolor": "transparent",
+                                    "font": {
+                                        "family": "Colfax",
+                                        "color": "white"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
