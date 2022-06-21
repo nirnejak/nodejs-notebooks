@@ -1,0 +1,42 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "class Observable {\n  constructor() {\n    this.subscribers = [];\n  }\n\n  subscribe(subscriber) {\n    this.subscribers.push(subscriber);\n  }\n\n  unsubscribe(subscriber) {\n    this.subscribers = this.subscribers.filter((s) => s !== subscriber);\n  }\n\n  broadcast(data) {\n    this.subscribers.forEach((s) => s(data));\n  }\n}\n\nconst observer = new Observable();\nconst fn = (data) => console.log(\"Callback was executed with data\",  data);\nobserver.subscribe(fn);\nobserver.broadcast(\"Hello from the observable\");\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Callback was executed with data Hello from the observable",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "typescript",
+            "source": [
+                "function createObservable() {\n  return {\n    subscribers: []\n    subscribe(subscriber) {\n      this.subscribers.push(subscriber);\n    },\n    unsubscribe(subscriber) {\n      this.subscribers = subscribers.filter((s) => s !== subscriber);\n    },\n    broadcast(data) {\n      this.subscribers.forEach((s) => s(data));\n    }\n  }\n}\n\nconst observer = createObservable();\nconst fn = (data) => console.log(\"Callback was executed with data\",  data);\nobserver.subscribe(fn);\nobserver.broadcast(\"Hello from the observable\");"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Callback was executed with data Hello from the observable",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
