@@ -22,7 +22,7 @@
         {
             "language": "typescript",
             "source": [
-                "function createObservable() {\n  return {\n    subscribers: []\n    subscribe(subscriber) {\n      this.subscribers.push(subscriber);\n    },\n    unsubscribe(subscriber) {\n      this.subscribers = subscribers.filter((s) => s !== subscriber);\n    },\n    broadcast(data) {\n      this.subscribers.forEach((s) => s(data));\n    }\n  }\n}\n\nconst observer = createObservable();\nconst fn = (data) => console.log(\"Callback was executed with data\",  data);\nobserver.subscribe(fn);\nobserver.broadcast(\"Hello from the observable\");"
+                "function createObservable() {\n  return {\n    subscribers: []\n    subscribe(subscriber) {\n      this.subscribers.push(subscriber);\n    },\n    unsubscribe(subscriber) {\n      this.subscribers = subscribers.filter((s) => s !== subscriber);\n    },\n    broadcast(data) {\n      this.subscribers.forEach((s) => s(data));\n    }\n  }\n}\n\nconst observer = createObservable();\n\nconst fn1 = (data) => console.log(\"Multiple with 1 = \",  data*1);\nconst fn2 = (data) => console.log(\"Multiple with 2 = \",  data*2);\nconst fn3 = (data) => console.log(\"Multiple with 3 = \",  data*3);\n\nobserver.subscribe(fn1);\nobserver.subscribe(fn2);\nobserver.subscribe(fn3);\n\nobserver.broadcast(5);"
             ],
             "outputs": [
                 {
@@ -30,7 +30,9 @@
                         {
                             "mime": "application/vnd.code.notebook.stdout",
                             "value": [
-                                "Callback was executed with data Hello from the observable",
+                                "Multiple with 1 =  5",
+                                "Multiple with 2 =  10",
+                                "Multiple with 3 =  15",
                                 ""
                             ]
                         }
