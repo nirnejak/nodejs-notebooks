@@ -1,0 +1,27 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "class List {\n  constructor(value) {\n    this.value = value;\n    this.next = null;\n  }\n\n  append(value) {\n    const node = new List(value);\n    let current = this;\n    while (current.next) {\n      current = current.next;\n    }\n    current.next = node;\n    return this;\n  }\n\n  prepend(value) {\n    const node = new List(value);\n    node.next = this;\n    return node;\n  }\n\n  delete(value) {\n    let current = this;\n    while (current.next) {\n      if (current.next.value === value) {\n        current.next = current.next.next;\n        return this;\n      }\n      current = current.next;\n    }\n    return this;\n  }\n\n  deleteAll(value) {\n    let current = this;\n    while (current.next) {\n      if (current.next.value === value) {\n        current.next = current.next.next;\n      } else {\n        current = current.next;\n      }\n    }\n    return this;\n  }\n\n  find(value) {\n    let current = this;\n    while (current.next) {\n      if (current.value === value) {\n        return current;\n      }\n      current = current.next;\n    }\n    return null;\n  }\n\n  findAll(value) {\n    let current = this;\n    const found = [];\n    while (current.next) {\n      if (current.value === value) {\n        found.push(current);\n      }\n      current = current.next;\n    }\n    return found;\n  }\n\n  reverse() {\n    let current = this;\n    let prev = null;\n    while (current) {\n      const next = current.next;\n      current.next = prev;\n      prev = current;\n      current = next;\n    }\n    return prev;\n  }\n}\n\nconst list = new List(11);\nlist.append(22);\nlist.append(33);\nlist.append(44);\nlist.append(55);\n\nconst traverseList = (list) => {\n  let current = list;\n  while (current) {\n    console.log(current.value);\n    current = current.next;\n  }\n};\n\ntraverseList(list);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "11",
+                                "22",
+                                "33",
+                                "44",
+                                "55",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
