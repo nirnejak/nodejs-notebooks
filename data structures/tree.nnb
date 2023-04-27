@@ -1,0 +1,43 @@
+{
+    "cells": [
+        {
+            "language": "javascript",
+            "source": [
+                "function Node(data) {\n  this.data = data\n  this.children = []\n}\n\nclass Tree {\n  constructor() {\n    this.root = null;\n  }\n\n  add(data, toNodeData) {\n    const node = new Node(data);\n\n    const parent = toNodeData ? this.findBFS(toNodeData) : null;\n\n    if (parent) {\n      parent.children.push(node);\n    } else {\n      if (!this.root) {\n        this.root = node;\n      } else {\n        return \"Tried to store node at root when root already exits.\";\n      }\n    }\n  }\n\n  findBFS(data) {\n    const queue = [this.root];\n    let _node = null;\n\n    this.traverseBFS((node) => {\n      if (node.data === data) {\n        _node = node;\n      }\n    });\n\n    return _node;\n  }\n\n  traverseBFS(cb) {\n    const queue = [this.root]\n    if(cb) {\n      while(queue.length) {\n        const node = queue.shift()\n        \n        cb(node)\n\n        for(const child of node.children) {\n          queue.push(child);\n        }\n      }\n    }\n  }\n}\n\nfunction main() {\n  const tree = new Tree()\n  tree.add(\"Node1\")\n  tree.add(\"Node2\", \"Node1\")\n  tree.add(\"Node3\", \"Node1\")\n  tree.add(\"Node4\", \"Node2\")\n  tree.add(\"Node5\", \"Node2\")\n  tree.add(\"Node6\", \"Node3\")\n\n  tree.traverseBFS((node) => {\n    console.log(\"Current Node:\", node)\n  })\n}\nmain()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Current Node: Node {",
+                                "  data: 'Node1',",
+                                "  children: [",
+                                "    Node { data: 'Node2', children: [Array] },",
+                                "    Node { data: 'Node3', children: [Array] }",
+                                "  ]",
+                                "}",
+                                "Current Node: Node {",
+                                "  data: 'Node2',",
+                                "  children: [",
+                                "    Node { data: 'Node4', children: [] },",
+                                "    Node { data: 'Node5', children: [] }",
+                                "  ]",
+                                "}",
+                                "Current Node: Node {",
+                                "  data: 'Node3',",
+                                "  children: [ Node { data: 'Node6', children: [] } ]",
+                                "}",
+                                "Current Node: Node { data: 'Node4', children: [] }",
+                                "Current Node: Node { data: 'Node5', children: [] }",
+                                "Current Node: Node { data: 'Node6', children: [] }",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
