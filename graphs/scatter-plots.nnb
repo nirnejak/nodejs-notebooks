@@ -3,7 +3,7 @@
         {
             "language": "typescript",
             "source": [
-                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = {\n  x: numbers,\n  y: squares,\n  name: \"square\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\nconst trace2 = {\n  x: numbers,\n  y: cubes,\n  name: \"cube\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
+                "const { Plotly } = require(\"node-kernel\");\n\nconst numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];\nconst squares = numbers.map((x: number) => x * x);\nconst cubes = numbers.map((x: number) => x * x * x);\n\nconst trace1 = {\n  x: numbers,\n  y: squares,\n  name: \"Square\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\nconst trace2 = {\n  x: numbers,\n  y: cubes,\n  name: \"Cube\",\n  type: \"scatter\",\n  mode: \"markers\",\n};\n\nconst data = [trace1, trace2];\n\nconst layout = {\n  height: 500,\n  width: 600,\n\n  colorway: [\"#e91e63\", \"#673ab7\"],\n  paper_bgcolor: \"transparent\",\n  plot_bgcolor: \"transparent\",\n  font: { family: \"Colfax\", color: \"white\" },\n};\n\nPlotly.newPlot(\"myDiv\", data, layout);\n"
             ],
             "outputs": [
                 {
@@ -11,7 +11,7 @@
                         {
                             "mime": "application/vnd.ts.notebook.plotly+json",
                             "value": {
-                                "requestId": "x7a53c1ffaa4048d2a10ff63eb24b9ecd",
+                                "requestId": "xaa8772d67cf143728fbbca87cd0dc331",
                                 "type": "generatePlot",
                                 "ele": "myDiv",
                                 "data": [
@@ -38,7 +38,7 @@
                                             64,
                                             81
                                         ],
-                                        "name": "square",
+                                        "name": "Square",
                                         "type": "scatter",
                                         "mode": "markers"
                                     },
@@ -65,7 +65,7 @@
                                             512,
                                             729
                                         ],
-                                        "name": "cube",
+                                        "name": "Cube",
                                         "type": "scatter",
                                         "mode": "markers"
                                     }
