@@ -1,0 +1,23 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "async function query(data) {\n  const response = await fetch(\n    \"https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B\",\n    {\n      headers: {\n        Authorization: \"Bearer <token>\",\n      },\n      method: \"POST\",\n      body: JSON.stringify(data),\n    }\n  );\n  const result = await response.json();\n  return result;\n}\n\nquery({ inputs: \"Can you please let us know more details about your \" }).then(\n  (response) => {\n    console.log(JSON.stringify(response));\n  }\n);\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{\"error\":\"The model meta-llama/Meta-Llama-3-8B is too large to be loaded automatically (16GB > 10GB). Please use Spaces (https://huggingface.co/spaces) or Inference Endpoints (https://huggingface.co/inference-endpoints).\"}",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
