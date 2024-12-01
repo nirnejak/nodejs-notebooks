@@ -1,5 +1,5 @@
 CREATE TABLE websites(
-  id          INTEGER  NOT NULL PRIMARY KEY ,
+  id          INTEGER  NOT NULL PRIMARY KEY,
   name        VARCHAR(35) NOT NULL,
   domain      VARCHAR(23) NOT NULL,
   ip          VARCHAR(15) NOT NULL,
